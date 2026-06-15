@@ -1,8 +1,7 @@
-terraform {
-  required_version = ">= 1.0"
-}
+variable "file_name" {}
+variable "file_content" {}
 
 resource "local_file" "test" {
-  content  = "Hello from Terraform!"
-  filename = "hello.txt"
+  content  = var.file_content
+  filename = var.file_name
 }
